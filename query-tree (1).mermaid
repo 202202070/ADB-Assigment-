@@ -1,0 +1,6 @@
+graph TD
+    A["π<sub>S.Name, C.Title, E.Grade</sub>"] --> B
+    B["σ<sub>S.StudentID = E.StudentID ∧ C.CourseID = E.CourseID ∧ S.Major = 'CS' ∧ C.Credits ≥ 3</sub>"] --> C
+    C["× (Cartesian Product)"] --> D[STUDENT]
+    C --> E[COURSE]
+    C --> F[ENROLLMENT]
