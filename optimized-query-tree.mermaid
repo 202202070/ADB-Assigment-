@@ -1,0 +1,11 @@
+graph TD
+    A[π S.Name, C.Title, E.Grade] --> B
+    B[⋈ C.CourseID = E.CourseID] --> C
+    B --> D
+    C[⋈ S.StudentID = E.StudentID] --> E
+    C --> F
+    D[π C.CourseID, C.Title] --> G
+    E[π S.StudentID, C.CourseID, E.Grade] --> H[ENROLLMENT]
+    F[π S.StudentID, S.Name] --> I
+    G[σ C.Credits ≥ 3] --> J[COURSE]
+    I[σ S.Major = 'Computer Science'] --> K[STUDENT]
