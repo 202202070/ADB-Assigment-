@@ -1,6 +1,9 @@
 graph TD
-    A["π<sub>S.Name, C.Title, E.Grade</sub>"] --> B
-    B["σ<sub>S.StudentID = E.StudentID ∧ C.CourseID = E.CourseID ∧ S.Major = 'CS' ∧ C.Credits ≥ 3</sub>"] --> C
-    C["× (Cartesian Product)"] --> D[STUDENT]
-    C --> E[COURSE]
-    C --> F[ENROLLMENT]
+    A[π Name, Title, Grade] --> B[σ S.Major = 'Computer Science']
+    B --> C[σ C.Credits >= 3]
+    C --> D[σ S.StudentID = E.StudentID]
+    D --> E[σ C.CourseID = E.CourseID]
+    E --> F[× Cartesian Product]
+    F --> G[STUDENT]
+    F --> H[COURSE]
+    F --> I[ENROLLMENT]
